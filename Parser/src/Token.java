@@ -9,6 +9,7 @@ public class Token {
     private static final int s6 = 6;
     private static final int s7 = 7;
     private static final int s8 = 8;
+    private static final int s9 = 9;
     private static final int dead = -1;
 
     private static int state = s0;
@@ -23,6 +24,7 @@ public class Token {
         PLUS,
         STAR,
         EPSILON,
+        END,
     }
 
     private TokenType tokenType;
@@ -61,6 +63,7 @@ public class Token {
             case s6: return TokenType.RPAREN;
             case s7: return TokenType.EPSILON;
             case s8: return TokenType.ALPHANUM;
+            case s9: return TokenType.END;
             default:{
                 return TokenType.ERROR;
             }
@@ -112,6 +115,7 @@ public class Token {
                 case 'x':
                 case 'y':
                 case 'z': return s8;
+                case '$': return s9;
                 default: return dead;
             }
             default: return dead;

@@ -9,21 +9,13 @@ public class Main {
         String line;
         Scanner sc = new Scanner();
         StringBuilder output = new StringBuilder();
-//        Parser ps = new Parser();
-//        ps.createRules();
+        Parser ps = new Parser();
 
         while((line = bufferedReader.readLine()) != null){
             ArrayList<Token> tokens = sc.process(line);
-//            output.append(line);
-            StringBuilder result = new StringBuilder();
-            for (Token token: tokens){
-                result.append(token.getTokenType()).append(" ");
-            }
-//            if (tokens.size() > 0) {
-//                result = ps.parse(tokens);
-//                System.out.println(line + " " + result);
-//            }
-            output.append(result).append("\n");
+            output.append(line);
+            String result = ps.parse(tokens);
+            output.append(" - ").append(result).append("\n");
         }
 
         output = new StringBuilder(output.toString().trim());
