@@ -25,6 +25,9 @@ public class Parser {
                     stack.pop();
                     token_pointer++;
                 }
+                else{
+                    return "REJECT";
+                }
             } else{
                 if(stack.peek().equals(tokens.get(token_pointer).getTokenType())){
                     stack.pop();

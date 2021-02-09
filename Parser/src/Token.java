@@ -80,6 +80,7 @@ public class Token {
                 case '(': return s5;
                 case ')': return s6;
                 case 'E': return s7;
+                case '0':
                 case '1':
                 case '2':
                 case '3':
