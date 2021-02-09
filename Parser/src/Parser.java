@@ -33,6 +33,8 @@ public class Parser {
                     return "REJECT";
                 }
             }
+            System.out.println(stack);
+            System.out.println(token_pointer);
         }
         if(stack.isEmpty() && token_pointer >= tokens.size())
             return "ACCEPT";
@@ -45,6 +47,7 @@ public class Parser {
         if(stack.isEmpty()){
             return;
         }
+        stack.pop();
         String[] temp = production.split(" ");
         for(int i = temp.length-1; i >= 0; i--){
             this.stack.push(temp[i]);
